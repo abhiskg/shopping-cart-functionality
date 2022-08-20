@@ -22,10 +22,19 @@ function getTotalPrice(elementId) {
     const totalPrice = parseInt(totalPriceElement.textContent);
     return totalPrice;
 }
+function setTextElement(elementId, value) {
+    const element = document.querySelector(elementId);
+    element.textContent = value.toString();
+}
 function setSubtotalprice() {
     const phonePrice = getTotalPrice("#phone-amount");
     const casePrice = getTotalPrice("#case-amount");
     const totalPrice = phonePrice + casePrice;
-    const subTotalElement = document.querySelector("#sub-total");
-    subTotalElement.textContent = totalPrice.toString();
+    setTextElement("#sub-total", totalPrice);
+    //   calculate tax
+    const taxAmount = parseFloat((totalPrice * 0.1).toFixed(2));
+    setTextElement("#tax-amount", taxAmount);
+    //   Final Price
+    const finalAmount = taxAmount + totalPrice;
+    setTextElement("#final-amount", finalAmount);
 }
