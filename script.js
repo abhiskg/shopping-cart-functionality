@@ -2,20 +2,24 @@
 document.querySelector("#phone-plus-btn").addEventListener("click", () => {
     const newQuantity = updateQuantity("#phone-quantity", true);
     const productPrice = 1219;
-    const newPrice = updatePrice(newQuantity, productPrice, "#phone-amount");
+    updatePrice(newQuantity, productPrice, "#phone-amount");
+    setSubtotalprice();
 });
 document.querySelector("#phone-minus-btn").addEventListener("click", () => {
     const newQuantity = updateQuantity("#phone-quantity", false);
     const productPrice = 1219;
-    const newPrice = updatePrice(newQuantity, productPrice, "#phone-amount");
+    updatePrice(newQuantity, productPrice, "#phone-amount");
+    setSubtotalprice();
 });
 document.querySelector("#case-plus-btn").addEventListener("click", () => {
     const newQuantity = updateQuantity("#case-quantity", true);
     const productPrice = 59;
-    const newPrice = updatePrice(newQuantity, productPrice, "#case-amount");
+    updatePrice(newQuantity, productPrice, "#case-amount");
+    setSubtotalprice();
 });
 document.querySelector("#case-minus-btn").addEventListener("click", () => {
     const newQuantity = updateQuantity("#case-quantity", false);
     const productPrice = 59;
-    const newPrice = updatePrice(newQuantity, productPrice, "#case-amount");
+    updatePrice(newQuantity, productPrice, "#case-amount");
+    setSubtotalprice();
 });

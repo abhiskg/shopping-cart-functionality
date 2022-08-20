@@ -17,3 +17,15 @@ function updatePrice(newQuantity, productPrice, amountElement) {
     const phoneAmountElement = document.querySelector(amountElement);
     phoneAmountElement.textContent = phonePrice.toString();
 }
+function getTotalPrice(elementId) {
+    const totalPriceElement = document.querySelector(elementId);
+    const totalPrice = parseInt(totalPriceElement.textContent);
+    return totalPrice;
+}
+function setSubtotalprice() {
+    const phonePrice = getTotalPrice("#phone-amount");
+    const casePrice = getTotalPrice("#case-amount");
+    const totalPrice = phonePrice + casePrice;
+    const subTotalElement = document.querySelector("#sub-total");
+    subTotalElement.textContent = totalPrice.toString();
+}

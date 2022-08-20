@@ -24,3 +24,24 @@ function updatePrice(
   ) as HTMLSpanElement;
   phoneAmountElement.textContent = phonePrice.toString();
 }
+
+function getTotalPrice(elementId: string) {
+  const totalPriceElement = document.querySelector(
+    elementId
+  ) as HTMLSpanElement;
+
+  const totalPrice = parseInt(totalPriceElement.textContent!);
+  return totalPrice;
+}
+
+function setSubtotalprice() {
+  const phonePrice = getTotalPrice("#phone-amount");
+  const casePrice = getTotalPrice("#case-amount");
+
+  const totalPrice = phonePrice + casePrice;
+
+  const subTotalElement = document.querySelector(
+    "#sub-total"
+  ) as HTMLSpanElement;
+  subTotalElement.textContent = totalPrice.toString();
+}
